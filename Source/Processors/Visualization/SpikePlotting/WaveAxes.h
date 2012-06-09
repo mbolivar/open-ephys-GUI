@@ -1,11 +1,6 @@
 #ifndef WAVE_AXES_H
 #define WAVE_AXES_H
 
-#if defined(__linux__)
-	#include <GL/glut.h>
-#else
-	#include <GLUT/glut.h>
-#endif
 #include <stdlib.h>
 #include "BaseUIElement.h"
 #include "../SpikeObject.h"

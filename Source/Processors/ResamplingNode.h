@@ -24,7 +24,9 @@
 #ifndef __RESAMPLINGNODE_H_79663B0__
 #define __RESAMPLINGNODE_H_79663B0__
 
-
+#ifdef WIN32
+#include <Windows.h>
+#endif
 #include "../../JuceLibraryCode/JuceHeader.h"
 #include "../Dsp/Dsp.h"
 #include "GenericProcessor.h"

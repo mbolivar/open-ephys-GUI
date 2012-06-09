@@ -61,7 +61,7 @@ void ElectrodePlot::initAxes(){
 	axes = WaveAxes(minX, minY, axesWidth, axesHeight, WAVE1);
 	
     //axes.setEnabled(false);
-	axes.setYLims(-1*pow(2,11), pow(2,14)*1.6);
+	axes.setYLims(-1*pow(2.f,11), pow(2.f,14)*1.6);
 	axes.setWaveformColor(1.0, 1.0, 1.0);
 
 }
@@ -86,8 +86,8 @@ int ElectrodePlot::getNumberOfAxes(){
 void ElectrodePlot::initLimits(){
     for (int i=0; i<4; i++)
     {
-        limits[i][0] = -1*pow(2,11);
-        limits[i][1] = pow(2,14);
+        limits[i][0] = -1*pow(2.f,11);
+        limits[i][1] = pow(2.f,14);
     }
 
 }

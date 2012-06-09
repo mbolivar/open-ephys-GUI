@@ -23,6 +23,9 @@
 
 #ifndef SPIKEDISPLAYCANVAS_H_
 #define SPIKEDISPLAYCANVAS_H_
+#ifdef WIN32
+#include <Windows.h>
+#endif
 
 #include "../../../JuceLibraryCode/JuceHeader.h"
 

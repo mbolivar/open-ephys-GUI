@@ -1,21 +1,20 @@
 #ifndef GENERIC_AXES_H_
 #define GENERIC_AXES_H_
 
-
-#if defined(__linux__)
-	#include <GL/glut.h>
-#else
-	#include <GLUT/glut.h>
+#ifdef WIN32
+#include <Windows.h>
 #endif
+
 #include <stdlib.h>
-#include <FTGL/ftgl.h>
+
+
 #include "../../../../JuceLibraryCode/JuceHeader.h"
 
 #include "../SpikeObject.h"
 
 #include "BaseUIElement.h"
 #include "PlotUtils.h"
-
+#include <FTGL/ftgl.h>
  	
 class GenericAxes: public BaseUIElement{
 

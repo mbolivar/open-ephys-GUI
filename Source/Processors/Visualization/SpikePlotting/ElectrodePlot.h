@@ -1,14 +1,9 @@
 #ifndef ELECTRODE_PLOT_H
 #define ELECTRODE_PLOT_H
 
-#if defined(__linux__)
-	#include <GL/glut.h>
-#else
-	#include <GLUT/glut.h>
-#endif
+
 #include <list>
 #include <math.h>
-
 #include "WaveAxes.h"
 #include "BaseUIElement.h"
 #include "PlotUtils.h"

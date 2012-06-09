@@ -98,13 +98,13 @@ void TetrodePlot::initAxes(){
     
     //axes.setEnabled(false);
     for (int i=0; i<4; i++){
-        wAxes[i].setYLims(-1*pow(2,11), pow(2,14)*1.6);
+        wAxes[i].setYLims(-1*pow(2.f,11), pow(2.f,14)*1.6);
         wAxes[i].setWaveformColor(1.0, 1.0, 1.0);
     }
     for (int i=0; i<6; i++)
     {
-        pAxes[i].setXLims(-1*pow(2,11), pow(2,14)*1.6);
-        pAxes[i].setYLims(-1*pow(2,11), pow(2,14)*1.6);
+        pAxes[i].setXLims(-1*pow(2.f,11), pow(2.f,14)*1.6);
+        pAxes[i].setYLims(-1*pow(2.f,11), pow(2.f,14)*1.6);
         pAxes[i].setPointColor(1.0, 1.0, 1.0);
     }
 
@@ -166,8 +166,8 @@ int TetrodePlot::getNumberOfAxes(){
 void TetrodePlot::initLimits(){
     for (int i=0; i<4; i++)
     {
-        limits[i][0] = -1*pow(2,11);
-        limits[i][1] = pow(2,14);
+        limits[i][0] = -1*pow(2.f,11);
+        limits[i][1] = pow(2.f,14);
     }
 
 }

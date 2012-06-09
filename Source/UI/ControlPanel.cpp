@@ -226,16 +226,16 @@ void Clock::drawTime()
 	if (isRecording)
 	{
 		glColor4f(1.0, 0.0, 0.0, 1.0);
-		m = floor(totalRecordTime/60000);
-		s = floor((totalRecordTime - m*60000)/1000);
+		m = floor(totalRecordTime/60000.f);
+		s = floor((totalRecordTime - m*60000)/1000.f);
 
 	} else {
 		if (isRunning)
 			glColor4f(1.0, 1.0, 0.0, 1.0);
 		else
 			glColor4f(1.0, 1.0, 1.0, 1.0);
-		m = floor(totalTime/60000);
-		s = floor((totalTime - m*60000)/1000);
+		m = floor(totalTime/60000.f);
+		s = floor((totalTime - m*60000)/1000.f);
 	}
 
 	String timeString = "";

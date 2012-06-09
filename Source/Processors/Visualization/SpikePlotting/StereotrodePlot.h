@@ -1,11 +1,7 @@
 #ifndef STEROETRODE_PLOT_H_
 #define STEROETRODE_PLOT_H_
 
-#if defined(__linux__)
-	#include <GL/glut.h>
-#else
-	#include <GLUT/glut.h>
-#endif
+
 #include <list>
 #include <math.h>
 

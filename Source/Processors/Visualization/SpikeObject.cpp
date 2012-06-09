@@ -192,7 +192,7 @@ void generateSimulatedSpike(SpikeObject *s, uint64_t timestamp, int noise)
 				n = rand() % noise - noise/2;
 			}
 
-            s->data[idx] = (trace[waveType][j] + n)  * pow(scale[j],scaleExponent) + shift;
+            s->data[idx] = (trace[waveType][j] + n)  * pow(static_cast<double>(scale[j]),scaleExponent) + shift;
             idx = idx+1;
         }
     }

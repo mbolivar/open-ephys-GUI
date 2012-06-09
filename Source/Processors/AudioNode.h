@@ -24,7 +24,9 @@
 #ifndef __AUDIONODE_H_AF61F3C5__
 #define __AUDIONODE_H_AF61F3C5__
 
-
+#ifdef WIN32
+#include <Windows.h>
+#endif
 #include "../../JuceLibraryCode/JuceHeader.h"
 #include <stdio.h>
 

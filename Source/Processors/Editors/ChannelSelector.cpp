@@ -24,6 +24,7 @@
 #include "ChannelSelector.h"
 #include <math.h>
 
+
 #include "../RecordNode.h"
 #include "../AudioNode.h"
 #include "../ProcessorGraph.h"
@@ -138,19 +139,19 @@ void ChannelSelector::refreshButtonBoundaries()
 	{
 		parameterButtons[i]->setBounds(columnWidth/2 + offsetLR +
 									   columnWidth*((i)%nColumns),
-									   floor((i)/nColumns)*rowHeight+offsetUD + topOffset,
+									   floor(static_cast<float>((i)/nColumns))*rowHeight+offsetUD + topOffset,
 									   columnWidth, rowHeight);
 
 		if (isNotSink)
 		{
 			recordButtons[i]->setBounds(columnWidth/2 + offsetLR +
 									   columnWidth*((i)%nColumns) - getDesiredWidth(),
-									   floor((i)/nColumns)*rowHeight+offsetUD + topOffset,
+									   floor(static_cast<float>((i)/nColumns))*rowHeight+offsetUD + topOffset,
 									   columnWidth, rowHeight);
 			audioButtons[i]->setBounds(columnWidth/2 + offsetLR +
 									   columnWidth*((i)%nColumns) -
 									   	getDesiredWidth()*2,
-									   floor((i)/nColumns)*rowHeight+offsetUD + topOffset,
+									   floor(static_cast<float>((i)/nColumns))*rowHeight+offsetUD + topOffset,
 									   columnWidth, rowHeight);
 		}
 

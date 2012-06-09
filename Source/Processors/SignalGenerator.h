@@ -24,7 +24,9 @@
 #ifndef __SIGNALGENERATOR_H_EAA44B0B__
 #define __SIGNALGENERATOR_H_EAA44B0B__
 
-
+#ifdef WIN32
+#include <Windows.h>
+#endif
 #include "../../JuceLibraryCode/JuceHeader.h"
 #include "GenericProcessor.h"
 #include "Editors/SignalGeneratorEditor.h"

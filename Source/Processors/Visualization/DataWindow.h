@@ -23,6 +23,9 @@
 
 #ifndef __DATAWINDOW_H_FDDAB8D0__
 #define __DATAWINDOW_H_FDDAB8D0__
+#ifdef WIN32
+#include <Windows.h>
+#endif
 
 #include "../../../JuceLibraryCode/JuceHeader.h"
 

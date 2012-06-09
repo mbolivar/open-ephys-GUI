@@ -22,6 +22,9 @@
 */
 #ifndef __LFPDISPLAYCANVAS_H_B711873A__
 #define __LFPDISPLAYCANVAS_H_B711873A__
+#ifdef WIN32
+#include <Windows.h>
+#endif
 
 #include "../../../JuceLibraryCode/JuceHeader.h"
 #include "../LfpDisplayNode.h"

@@ -23,7 +23,9 @@
 #ifndef __AUDIOEDITOR_H_9D6F1FC3__
 #define __AUDIOEDITOR_H_9D6F1FC3__
 
-
+#ifdef WIN32
+#include <Windows.h>
+#endif
 #include "../../../JuceLibraryCode/JuceHeader.h"
 #include "../AudioNode.h"
 #include <stdio.h>

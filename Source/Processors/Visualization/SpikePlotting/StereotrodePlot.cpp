@@ -108,8 +108,8 @@ int StereotrodePlot::getNumberOfAxes(){
 void StereotrodePlot::initLimits(){
     for (int i=0; i<2; i++)
     {
-        limits[i][0] = -1*pow(2,11);
-        limits[i][1] = pow(2,14)*1.6;
+        limits[i][0] = -1*pow(2.f,11);
+        limits[i][1] = pow(2.f,14)*1.6;
     }
 
 }

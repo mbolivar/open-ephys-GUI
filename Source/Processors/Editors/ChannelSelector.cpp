@@ -362,6 +362,8 @@ int ChannelSelector::getDesiredWidth()
 	return 150;
 }
 
+
+
 void ChannelSelector::buttonClicked(Button* button)
 {
 	//checkChannelSelectors();
@@ -500,6 +502,74 @@ void ChannelSelector::buttonClicked(Button* button)
 
 }
 
+void ChannelSelector::saveSettings(Array<bool>& p, 
+								   Array<bool>& a,
+								   Array<bool>& r,
+								   int& activeButton)
+{
+
+	for (int i = 0; i < parameterButtons.size(); i++)
+	{
+		p.add(parameterButtons[i]->getToggleState());
+	}
+
+	for (int i = 0; i < audioButtons.size(); i++)
+	{
+		a.add(audioButtons[i]->getToggleState());
+	}
+
+	for (int i = 0; i < recordButtons.size(); i++)
+	{
+		r.add(recordButtons[i]->getToggleState());
+	}
+
+	if (paramsButton->getToggleState())
+	{
+		activeButton = 1;
+	} else if (recordButton->getToggleState())
+	{
+		activeButton = 2;
+	} else if (audioButton->getToggleState())
+	{
+		activeButton = 3;
+	}
+
+
+}
+
+void ChannelSelector::loadSettings(Array<bool>& p,
+								   Array<bool>& a,
+								   Array<bool>& r,
+								   int& activeButton)
+{
+	for (int i = 0; i < parameterButtons.size(); i++)
+	{
+		parameterButtons[i]->setToggleState(p.getUnchecked(i), true);
+	}
+
+	for (int i = 0; i < audioButtons.size(); i++)
+	{
+		audioButtons[i]->setToggleState(a.getUnchecked(i), true);
+	}
+
+	for (int i = 0; i < recordButtons.size(); i++)
+	{
+		recordButtons[i]->setToggleState(r.getUnchecked(i), true);
+	}
+
+	switch (activeButton)
+	{
+		case 1 :
+			paramsButton->setToggleState(true, true); break;
+		case 2 :
+			recordButton->setToggleState(true, true); break;
+		case 3 :
+			audioButton->setToggleState(true, true);
+		default :
+			break;
+	}		
+
+}
 
 ///////////// BUTTONS //////////////////////
 

@@ -97,6 +97,10 @@ public:
     
     bool eventsOnly;
 
+    void saveSettings(Array<bool>& params, Array<bool>& audio, Array<bool>& record, int& activeButton);
+
+    void loadSettings(Array<bool>& params, Array<bool>& audio, Array<bool>& record, int& activeButton);
+
 private:
 
 	EditorButton* audioButton;

@@ -350,34 +350,40 @@ void GenericProcessor::update()
 
 }
 
-// bool GenericProcessor::recordStatus(int chan)
-// {
 
-// 	return getEditor()->getRecordStatus(chan);//recordChannels[chan];
+void GenericProcessor::setStateInformation(const void* data, int sizeInBytes)
+{
 
+	ScopedPointer<XmlElement> xmlState (getXmlFromBinary (data, sizeInBytes));
 
-// }
+	if (xmlState != 0)
+	{
+		if (xmlState->hasTagName ("SETTINGS"))
+		{
 
-// bool GenericProcessor::audioStatus(int chan)
-// {
+			// extract the state
+			int one = xmlState->getIntAttribute("one", one);
+			int two = xmlState->getIntAttribute("two", two);
 
-// 	return getEditor()->getAudioStatus(chan);//recordChannels[chan];
+			std::cout << "Got " << one << " and " << two << std::endl;
 
+		}
+	}
 
-// }
+}
 
-// void GenericProcessor::generateDefaultChannelNames(StringArray& names)
-// {
-// 	names.clear();
+void GenericProcessor::getStateInformation (MemoryBlock &destData)
+{
+	// Create outer XML element
+	XmlElement xml("SETTINGS");
 
-// 	for (int i = 0; i < settings.numOutputs; i++)
-// 	{
-// 		String channelName = "CH";
-// 		channelName += (i+1);
-// 		names.add(channelName);
-// 	}
+	// add attributes
+	xml.setAttribute("one",1);
+	xml.setAttribute("two",2);
 
-// }
+	copyXmlToBinary (xml, destData);
+
+}
 
 void GenericProcessor::enableEditor()
 {

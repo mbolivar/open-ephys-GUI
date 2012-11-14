@@ -81,9 +81,9 @@ public:
 	
 	void reset() {}
 	void setCurrentProgramStateInformation(const void* data, int sizeInBytes) {}
-	void setStateInformation(const void* data, int sizeInBytes) {}
+	void setStateInformation(const void* data, int sizeInBytes); // {}
 	void getCurrentProgramStateInformation(MemoryBlock &destData) {}
-	void getStateInformation (MemoryBlock &destData) {}
+	void getStateInformation (MemoryBlock &destData);// {}
 	void changeProgramName (int index, const String &newName) {}
 	void setCurrentProgram (int index) {}
 
@@ -204,7 +204,7 @@ public:
 
  	enum eventChannelTypes
  	{
- 		GENERIC_EVENT = 999,
+ 		GENERIC_EVENT = 255,
  		SINGLE_ELECTRODE = 1,
  		STEREOTRODE = 2,
  		TETRODE = 4

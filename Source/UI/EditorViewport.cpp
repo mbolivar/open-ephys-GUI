@@ -1003,14 +1003,17 @@ XmlElement* EditorViewport::createNodeXml (GenericEditor* editor,
 
     name += editor->getName();
 
+    e->setAttribute ("name", name);
+    e->setAttribute ("insertionPoint", insertionPt);
+
+    XmlElement* state = new XmlElement("STATE");
+
+    MemoryBlock m;
+    source->getStateInformation(m);
+    state->addTextElement (m.toBase64Encoding());
+    e->addChildElement(state);
+
     std::cout << name << std::endl;
-
-    e->setAttribute (T("name"), name);
-    e->setAttribute (T("insertionPoint"), insertionPt);
-
-   // source->stateSaved = true;
-  
-    //GenericProcessor* dest = (GenericProcessor*) source->getDestNode();
 
     return e;
 
@@ -1209,6 +1212,17 @@ const String EditorViewport::loadState()
 
                 GenericProcessor* p = (GenericProcessor*) lastEditor->getProcessor();
                 p->loadOrder = loadOrder;
+
+                const XmlElement* const state = processor->getChildByName("STATE");
+
+                if (state != 0)
+                {
+                    MemoryBlock m;
+                    m.fromBase64Encoding (state->getAllSubText());
+
+                    p->setStateInformation (m.getData(), (int) m.getSize());
+
+                }
                 
                 loadOrder++;
 

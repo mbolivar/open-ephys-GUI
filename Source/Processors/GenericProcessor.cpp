@@ -381,6 +381,11 @@ void GenericProcessor::getStateInformation (MemoryBlock &destData)
 	xml.setAttribute("one",1);
 	xml.setAttribute("two",2);
 
+	// Stuff to do:
+	// - automagically save state of each channel
+	// - automagically save state of each Parameter
+	// - allow the custom settings to be saved as well
+
 	copyXmlToBinary (xml, destData);
 
 }

@@ -1034,7 +1034,7 @@ XmlElement* EditorViewport::switchNodeXml (GenericProcessor* processor)
 const String EditorViewport::saveState() 
 {
 
-     String error;
+    String error;
 
     FileChooser fc ("Choose the file to save...",
                         File::getCurrentWorkingDirectory(),

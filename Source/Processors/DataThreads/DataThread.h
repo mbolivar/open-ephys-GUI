@@ -49,7 +49,7 @@ class DataThread : public Thread
 public:
 
     DataThread(SourceNode* sn);
-    ~DataThread();
+    virtual ~DataThread();
 
     /** Calls 'updateBuffer()' continuously while the thread is being run.*/
     void run();

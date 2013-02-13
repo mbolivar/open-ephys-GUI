@@ -562,6 +562,9 @@
     <ClCompile Include="..\..\Source\Processors\Editors\GenericEditor.cpp">
       <Filter>open-ephys\Source\Processors\Editors</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Processors\DataThreads\UDPReaderThread.cpp">
+      <Filter>open-ephys\Source\Processors\DataThreads</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Processors\DataThreads\rhythm-api\okFrontPanelDLL.cpp">
       <Filter>open-ephys\Source\Processors\DataThreads\rhythm-api</Filter>
     </ClCompile>
@@ -2057,6 +2060,9 @@
     </ClInclude>
     <ClInclude Include="..\..\Source\Processors\Editors\GenericEditor.h">
       <Filter>open-ephys\Source\Processors\Editors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Processors\DataThreads\UDPReaderThread.h">
+      <Filter>open-ephys\Source\Processors\DataThreads</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\Processors\DataThreads\rhythm-api\okFrontPanelDLL.h">
       <Filter>open-ephys\Source\Processors\DataThreads\rhythm-api</Filter>

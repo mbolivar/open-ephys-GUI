@@ -399,6 +399,10 @@
                 file="Source/Processors/Editors/GenericEditor.h"/>
         </GROUP>
         <GROUP id="ZgsuWxi" name="DataThreads">
+          <FILE id="GY4dKZ" name="UDPReaderThread.cpp" compile="1" resource="0"
+                file="Source/Processors/DataThreads/UDPReaderThread.cpp"/>
+          <FILE id="ov4n3x" name="UDPReaderThread.h" compile="0" resource="0"
+                file="Source/Processors/DataThreads/UDPReaderThread.h"/>
           <GROUP id="LcWQtrg" name="rhythm-api">
             <FILE id="hyM1EYD" name="okFrontPanelDLL.cpp" compile="1" resource="0"
                   file="Source/Processors/DataThreads/rhythm-api/okFrontPanelDLL.cpp"/>

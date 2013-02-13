@@ -112,6 +112,7 @@ OBJECTS := \
   $(OBJDIR)/AudioEditor_fb2c6555.o \
   $(OBJDIR)/FilterEditor_dfe1f39d.o \
   $(OBJDIR)/GenericEditor_becb2ad6.o \
+  $(OBJDIR)/UDPReaderThread_299ba1f9.o \
   $(OBJDIR)/okFrontPanelDLL_87687880.o \
   $(OBJDIR)/rhd2000datablock_722d8dae.o \
   $(OBJDIR)/rhd2000evalboard_e0b412d5.o \
@@ -519,6 +520,11 @@ $(OBJDIR)/FilterEditor_dfe1f39d.o: ../../Source/Processors/Editors/FilterEditor.
 $(OBJDIR)/GenericEditor_becb2ad6.o: ../../Source/Processors/Editors/GenericEditor.cpp
 	-@mkdir -p $(OBJDIR)
 	@echo "Compiling GenericEditor.cpp"
+	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
+
+$(OBJDIR)/UDPReaderThread_299ba1f9.o: ../../Source/Processors/DataThreads/UDPReaderThread.cpp
+	-@mkdir -p $(OBJDIR)
+	@echo "Compiling UDPReaderThread.cpp"
 	@$(CXX) $(CXXFLAGS) -o "$@" -c "$<"
 
 $(OBJDIR)/okFrontPanelDLL_87687880.o: ../../Source/Processors/DataThreads/rhythm-api/okFrontPanelDLL.cpp

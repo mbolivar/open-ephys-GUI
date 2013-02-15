@@ -27,6 +27,7 @@
 #include "DataThreads/FPGAThread.h"
 #include "DataThreads/FileReaderThread.h"
 #include "DataThreads/RHD2000Thread.h"
+#include "DataThreads/UDPReaderThread.h"
 #include "Editors/SourceNodeEditor.h"
 #include "Editors/RHD2000Editor.h"
 #include "Channel.h"
@@ -77,6 +78,13 @@ SourceNode::SourceNode(const String& name_)
     else if (getName().equalsIgnoreCase("Rhythm FPGA"))
     {
         dataThread = new RHD2000Thread(this);
+    }
+    else if (getName().equalsIgnoreCase("UDP Reader"))
+    {
+        uint16_t port = 6000;
+        dataThread = new UDPReaderThread(this, port);
+        if (dataThread->foundInputSource())
+            std::cout << "UDP Reader at port " << port << std::endl;
     }
 
     if (dataThread != 0)
